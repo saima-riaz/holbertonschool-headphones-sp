@@ -5,7 +5,10 @@ You won’t have a lot of instruction, you are free to implement it the way that
 
 Here the final result:
 
-![Desktop Version](https://i.postimg.cc/nLpVz6KK/temp-Imagejcker-F.avif)](https://postimg.cc/5XKWKKRj)
+## Desktop Version:
+
+![Desktop Version](https://i.postimg.cc/nLpVz6KK/temp-Imagejcker-F.avif)
+
 
 ## Project Requirements 
 
