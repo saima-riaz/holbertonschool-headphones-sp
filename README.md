@@ -7,7 +7,7 @@ Here the final result:
 
 ## Desktop Version:
 
-[![temp-Imagejcker-F.avif](https://i.postimg.cc/nLpVz6KK/temp-Imagejcker-F.avif)]
+![temp-Imagejcker-F.avif](https://postimg.cc/5XKWKKRj)
 
 ## Project Requirements 
 
