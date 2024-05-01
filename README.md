@@ -7,8 +7,7 @@ Here the final result:
 
 ## Desktop Version:
 
-![temp-Imagegk-Sbv0.avif](https://i.postimg.cc/5Np8fzRV/temp-Imagegk-Sbv0.avif)
-
+![Desktop](https://i.postimg.cc/7LNVdLTs/temp-Image-Dl9-RHX.avif)
 
 ## Project Requirements 
 
