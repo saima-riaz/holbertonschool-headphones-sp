@@ -1,0 +1,217 @@
+/* Base styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    background: #ff6565;
+    color: white;
+    border-radius: 30px;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #a44040;
+}
+
+/* Header styles */
+
+main section:nth-child(1) {
+    background-image: url("./images/headphones_hero_1.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+main section:nth-child(1) header {
+    padding: 30px 200px;
+}
+
+main section:nth-child(1) header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+main section:nth-child(1) header ul li ul li {
+    margin: 0 50px 0 0;
+}
+
+main section:nth-child(1) header ul li ul li a:hover {
+    color: #ff6565;
+}
+
+main section:nth-child(1) header ul img {
+    width: 114px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.menu-btn:checked ~ .navbar-menu {
+    display: block;
+}
+
+.menu-btn:checked ~ .navbar-menu .nav {
+    max-height: 100%;
+    overflow: inherit;
+}
+
+.menu-btn:checked ~ .navbar-menu .menu-icon .navicon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .navbar-menu .menu-icon .navicon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn:checked ~ .navbar-menu .menu-icon .navicon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+@media (max-width: 767px) {
+    main section:nth-child(1) header {
+        padding: 30px 66px;
+    }
+
+    main section:nth-child(1) header ul li ul li {
+        margin: 0 30px 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+    main section:nth-child(1) header ul {
+        justify-content: center;
+    }
+    .header-logo {
+        padding: 0 50px 0 0;
+    }
+
+    .header .nav {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+        padding: 10px 0 0 0;
+    }
+
+    .nav li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar-menu {
+        flex: 1 100%;
+        display: none;
+    }
+
+    .header .menu-icon {
+        display: block;
+    }
+    .header .menu-icon {
+        cursor: pointer;
+        padding: 12px 0 0 0;
+        position: relative;
+        user-select: none;
+    }
+
+    .header .menu-icon .navicon {
+        background: white;
+        display: block;
+        width: 15px;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+    }
+
+    .header .menu-icon .navicon::before,
+    .header .menu-icon .navicon::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        background: white;
+        transition: all 0.2s ease-out;
+    }
+
+    .header .menu-icon .navicon::before {
+        top: 0.4rem;
+    }
+
+    .header .menu-icon .navicon::after {
+        top: -0.4rem;
+    }
+}
+
+.main-part {
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    color: white;
+    padding: 0 370px;
+    text-align: center;
+}
+
+.main-part h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.main-part .first {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.main-part div {
+    display: flex;
+    justify-content: center;
+}
+
+.main-part button {
+    margin: 40px 0 60px 0;
+    width: 140px;
+    height: 44px;
+    font-size: 12px;
+}
+
+.paragraph {
+    font-size: 16px;
+    color: rgb(201, 201, 201);
+    width: 630px;
+    font-weight: normal;
+}
+
+@media (max-width: 767px) {
+    .main-part {
+        height: 80%;
+        padding: 0 66px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-part {
+        height: 80%;
+        padding: 0 9px;
+    }
+}
