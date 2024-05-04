@@ -1,0 +1,829 @@
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+main {
+    display: block;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+a {
+    background-color: transparent;
+}
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted;
+}
+b,
+strong {
+    font-weight: bolder;
+}
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+small {
+    font-size: 80%;
+}
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub {
+    bottom: -0.25em;
+}
+sup {
+    top: -0.5em;
+}
+img {
+    border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+button,
+input {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+    -webkit-appearance: button;
+}
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+progress {
+    vertical-align: baseline;
+}
+textarea {
+    overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+details {
+    display: block;
+}
+summary {
+    display: list-item;
+}
+template {
+    display: none;
+}
+[hidden] {
+    display: none;
+}
+
+/* Variables
+	============================= */
+:root {
+    --color-primary: #ff6565;
+    --color-black: #071629;
+    --color-white: #ffffff;
+
+    --text-color: var(--color-black);
+
+    --font-family-base: "Source Sans Pro";
+
+    --font-size-x-small: 1.2rem;
+    --font-size-small: 1.4rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 2rem;
+    --font-size-x-large: 3.2rem;
+    --font-size-xx-large: 4.6rem;
+    --font-size-fonticon: 10rem;
+
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --line-height-base: 26px;
+
+    /** HEADER **/
+    --header-padding: 2.9rem 0 0;
+
+    /** NAVBAR **/
+    --nav-item-font-weight: var(--font-weight-bold);
+    --nav-item-font-size: var(--font-size-x-small);
+    --nav-item-letter-spacing: 0.04rem;
+    --nav-item-padding-top: 1.5rem;
+    --nav-item-display: inline-block;
+    --nav-item-margin: 0 0 0 4rem;
+    --nav-item-link-hover: var(--color-primary);
+
+    /** SECTION **/
+    --section-padding: 6.5rem 2rem 0;
+    --section-header-padding: 0 0 3rem;
+    --section-header-align: center;
+    --section-title-font-size: var(--font-size-x-large);
+    --section-title-font-weight: var(--font-weight-bold);
+    --section-title-margin: 0;
+    --section-title-line-height: normal;
+    --section-title-color: var(--color-black);
+    --section-body-padding: 2rem 0 4rem;
+    --section-footer-padding: 3rem 0 0;
+    --section-footer-align: center;
+
+    /* BUTTON */
+    --button-display: inline-block;
+    --button-padding: 0.5rem 2.5rem;
+    --button-margin: 0 auto 2rem;
+    --button-border: var(--color-primary) solid 0.2rem;
+    --button-border-radius: 2rem;
+    --button-color: var(--color-white);
+    --button-background-color: var(--color-primary);
+    --button-text-decoration: none;
+    --button-text-transform: uppercase;
+    --button-font-size: var(--font-size-small);
+    --button-hover-opacity: 0.9;
+}
+
+/* Base
+	  ============================= */
+@font-face {
+    font-family: "holberton_school-icon";
+    src: url("fonts/holberton_school-icon.eot?sq4eq4");
+    src: url("fonts/holberton_school-icon.eot?sq4eq4#iefix")
+            format("embedded-opentype"),
+        url("fonts/holberton_school-icon.ttf?sq4eq4") format("truetype"),
+        url("fonts/holberton_school-icon.woff?sq4eq4") format("woff"),
+        url("fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon")
+            format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "holberton_school-icon" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: var(--font-size-fonticon);
+    color: var(--color-primary);
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-ic_sound:before {
+    content: "\e90e";
+}
+
+.holberton_school-icon-ic_video:before {
+    content: "\e910";
+}
+
+.holberton_school-icon-ic_music:before {
+    content: "\e90d";
+}
+
+.holberton_school-icon-ic_hearing:before {
+    content: "\e909";
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-bold);
+}
+
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: var(--color-primary);
+}
+
+a:active {
+    color: var(--color-primary);
+}
+
+.button {
+    display: var(--button-display);
+    padding: var(--button-padding);
+    border: var(--button-border);
+    border-radius: var(--button-border-radius);
+    font-size: var(--button-font-size);
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    text-decoration: var(--button-text-decoration);
+    text-transform: var(--button-text-transform);
+    cursor: pointer;
+    margin: var(--button-margin);
+}
+
+.button:hover,
+.button:active {
+    opacity: var(--button-hover-opacity);
+    color: var(--button-color);
+}
+
+@media screen and (min-width: 481px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    html {
+        font-size: 72%;
+    }
+}
+
+/* Helpers
+	  ============================= */
+
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip-path: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/*** 2. LAYOUT ***/
+
+/* Layout
+	  ============================= */
+.container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero background */
+/* .hero-background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-position: -90vw;
+  object-fit: cover;
+  width: 100vw;
+  height: 800px;
+} */
+
+/* @media screen and (min-width: 481px) {
+  .hero-background {
+    object-position: top center;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .hero-background {
+    object-fit: fill;
+  }
+} */
+
+/* Header
+	============================= */
+
+.header {
+    padding: var(--header-padding);
+    position: relative;
+    background-image: url(./images/headphones_hero_1.jpg);
+    background-size: cover;
+    background-position: -90vw;
+    background-repeat: no-repeat;
+    min-height: 800px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-logo {
+    margin: auto;
+}
+
+@media screen and (min-width: 481px) {
+    .header {
+        background-position: top center;
+        /* background-size: 100% 100%; */
+    }
+    .header-container {
+        justify-content: space-around;
+    }
+
+    .header-logo {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .header {
+        background-size: 100% 100%;
+    }
+}
+
+/* Header menu mobile
+	============================= */
+.header .menu-icon {
+    cursor: pointer;
+    padding-left: 2.1rem;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: var(--color-white);
+    display: block;
+    width: 1.5rem;
+    height: 0.2rem;
+    position: relative;
+    transition: background 0.2s ease-out;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    content: "";
+    display: block;
+    width: 140%;
+    height: 100%;
+    position: absolute;
+    background: var(--color-white);
+    transition: all 0.2s ease-out;
+}
+
+.header .menu-icon .navicon:before {
+    top: 0.7rem;
+}
+
+.header .menu-icon .navicon:after {
+    top: -0.7rem;
+}
+
+@media screen and (min-width: 481px) {
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+/* menu btn */
+.header .menu-btn {
+    display: none;
+}
+
+.menu-btn:checked ~ .navbar-menu {
+    display: block;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before,
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    top: 0;
+}
+
+/* Navbar
+	  ============================= */
+.navbar-menu {
+    display: none;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav .nav-item {
+    font-weight: var(--nav-item-font-weight);
+    font-size: var(--nav-item-font-size);
+    letter-spacing: var(--nav-item-letter-spacing);
+}
+
+.nav .nav-link {
+    display: block;
+    padding: var(--nav-item-padding-top) 0;
+    position: relative;
+}
+
+.nav .nav-item:first-child .nav-link {
+    padding-top: 0;
+}
+
+.nav .nav-link:hover {
+    color: var(--nav-item-link-hover);
+    text-decoration: none;
+}
+
+@media screen and (min-width: 481px) {
+    .navbar-menu {
+        display: block;
+        flex-basis: auto;
+    }
+
+    .nav {
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+        display: flex;
+    }
+
+    .nav .nav-item:first-child .nav-link {
+        padding-top: var(--nav-item-padding-top);
+    }
+
+    .nav .nav-item + .nav-item {
+        margin: var(--nav-item-margin);
+    }
+}
+
+/* Grid
+	  ============================= */
+ul.row {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 481px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    [class*="col-"] {
+        margin: 1rem;
+    }
+
+    .col-1-4 {
+        width: calc((100% / 2) - 2rem);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .col-1-4 {
+        width: calc((100% / 4) - 2rem);
+    }
+}
+
+/*** 3. SECTION ***/
+
+/* Section (all styles)
+	  ============================= */
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section-header {
+    text-align: var(--section-header-align);
+    padding: var(--section-header-padding);
+}
+
+.section-title {
+    font-size: var(--section-title-font-size);
+    font-weight: var(--section-title-font-weight);
+    margin: var(--section-title-margin);
+    color: var(--section-title-color);
+    line-height: var(--section-title-line-height);
+}
+
+.section-subtitle {
+    padding: 0 3rem;
+}
+
+.section-body {
+    padding: var(--section-body-padding);
+    text-align: center;
+}
+
+.section-description {
+    margin-top: 3rem;
+}
+
+.section-footer {
+    padding: var(--section-footer-padding);
+    text-align: var(--section-footer-align);
+}
+
+/* Section HERO
+	  ============================= */
+.section-hero {
+    margin-top: 26rem;
+}
+
+.section-hero .section-title {
+    color: var(--color-white);
+}
+
+.section-hero .section-body {
+    padding: 0 1.5rem;
+    color: var(--color-white);
+}
+
+.section-hero .section-subtitle {
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 481px) {
+    .section-hero .section-body {
+        padding: 0 6rem;
+    }
+}
+
+/* Section RESULTS
+	  ============================= */
+.section-results {
+    background-image: url(./images/headphones_hero_2.jpg);
+}
+
+.section-results {
+    color: var(--color-white);
+}
+
+.section-results .section-title {
+    color: var(--color-white);
+}
+
+/*** 4. CARD ***/
+
+/* Card (all styles)
+	  ============================= */
+
+.card-subtitle {
+    display: inline-block;
+    width: 20rem;
+    margin-top: 0;
+}
+
+[class*="col-"] {
+    margin-top: 5rem;
+}
+
+.card-img {
+    width: 20rem;
+}
+
+@media screen and (min-width: 491px) {
+    .card-img {
+        width: 18rem;
+    }
+}
+
+/* Card results
+	  ============================= */
+.card-results {
+    position: relative;
+}
+
+.card-contents {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-results .card-title {
+    font-size: var(--font-size-xx-large);
+    margin-bottom: 2rem;
+}
+
+/*** 5. FORM ***/
+/* Basic form
+        ============================= */
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+label {
+    /* text-align: left; */
+    cursor: pointer;
+    display: block;
+    font-size: var(--font-size-small);
+    padding: 0 0 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    position: relative;
+    width: 100%;
+    line-height: 1;
+    border: 0.1rem solid var(--color-black);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: var(--color-white);
+    box-shadow: none;
+    outline: 0;
+}
+
+input[type="text"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+textarea:focus::placeholder {
+    text-align: right;
+}
+
+::placeholder {
+    font-size: var(--font-size-small);
+    color: var(--color-black);
+    font-weight: var(--font-weight-bold);
+    pointer-events: none;
+}
+
+/* Form group
+    ============================= */
+.form-group {
+    padding: 1rem;
+    margin: 0;
+}
+
+.form-group:focus-within {
+    transition: 0.3s;
+}
+
+/* Form help
+============================= */
+.form-group .form-help {
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: 0.019rem;
+    color: var(--color-dark-grey);
+    font-size: var(--font-size-small);
+    max-height: 0;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.form-group:focus-within .form-help {
+    max-height: 20rem;
+    margin: 0.4rem 0 0;
+}
+
+/* Form error handling
+============================= */
+/* The following code is used to place the icon in the after pseudo element. Because after and before are not possible in an input, we need to use a span that will be positioned on the right of our input. */
+
+input:not(:placeholder-shown) ~ .form-field-icon::after {
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+}
+
+/* Because inputs are invalid by default, we need to be careful and show the icon when we are not in focus and when when the input is not empty (placeholder-shown). Careful with this one because it is not supported everywhere. */
+
+input:required:invalid:not(:focus):not(:placeholder-shown)
+    ~ .form-field-icon::after {
+    content: "✘";
+    color: var(--color-primary);
+}
+
+input:required:valid ~ .form-field-icon::after {
+    content: "✔";
+    color: var(--color-primary);
+}
+
+/* We want to hide the helper text when we are not in focus. The tilte allows us to select a sibling element in CSS */
+
+input:required:valid ~ .form-help {
+    max-height: 0;
+}
+
+/* Showing a border in a different color is good but not enough. For accessibility purposes, we added an icon when the input is valid or invalid to have a visual distinction that is not only color based.*/
+
+input:required:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border: 0.1rem solid var(--color-primary);
+}
+
+input:required:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+    border: 0.1rem solid var(--color-primary);
+}
