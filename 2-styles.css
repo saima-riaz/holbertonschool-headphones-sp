@@ -1,0 +1,457 @@
+/* Base Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    background: #ff6565;
+    color: white;
+    padding: 13px 31px;
+    border-radius: 30px;
+    border: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #a44040;
+}
+
+/* Header Styles */
+
+header {
+    background-image: url("./images/headphones_hero_1.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding: 30px 200px;
+}
+
+header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+header ul li ul li {
+    margin: 0 50px 0 0;
+}
+
+header ul li ul li a:hover {
+    color: #ff6565;
+}
+
+header ul img {
+    width: 114px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menu-btn:checked ~ .navbar-menu {
+    display: block;
+}
+
+.menu-btn:checked ~ .navbar-menu .nav {
+    max-height: 100%;
+    overflow: inherit;
+}
+
+.menu-btn:checked ~ .navbar-menu .menu-icon .navicon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .navbar-menu .menu-icon .navicon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn:checked ~ .navbar-menu .menu-icon .navicon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 30px 66px;
+    }
+
+    header ul li ul li {
+        margin: 0 30px 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header ul {
+        justify-content: center;
+    }
+    .header-logo {
+        padding: 0 50px 0 0;
+    }
+
+    .header .nav {
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+        padding: 10px 0 0 0;
+    }
+
+    .nav li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar-menu {
+        flex: 1 100%;
+        display: none;
+    }
+
+    .header .menu-icon {
+        display: block;
+    }
+    .header .menu-icon {
+        cursor: pointer;
+        padding: 12px 0 0 0;
+        position: relative;
+        user-select: none;
+    }
+
+    .header .menu-icon .navicon {
+        background: white;
+        display: block;
+        width: 15px;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+    }
+
+    .header .menu-icon .navicon::before,
+    .header .menu-icon .navicon::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        position: absolute;
+        background: white;
+        transition: all 0.2s ease-out;
+    }
+
+    .header .menu-icon .navicon::before {
+        top: 0.4rem;
+    }
+
+    .header .menu-icon .navicon::after {
+        top: -0.4rem;
+    }
+}
+
+/* Main Section Styles */
+
+.main-part {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 0 370px;
+    text-align: center;
+}
+
+.main-part h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.main-part .intro-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.main-part .cta-button {
+    margin: 40px 0 60px 0;
+}
+
+.main-part button {
+    width: 160px;
+    height: 44px;
+    font-size: 12px;
+}
+
+.main-part .paragraph-container {
+    width: 630px;
+}
+
+.paragraph {
+    font-size: 16px;
+    color: rgb(201, 201, 201);
+    font-weight: normal;
+}
+
+@media (max-width: 767px) {
+    .main-part {
+        padding: 0 66px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-part {
+        padding: 0 9px;
+    }
+}
+
+/* Section What we do Styles */
+
+.what_we_do {
+    padding: 100px 0;
+}
+
+.what_we_do .disc {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.what_we_do .disc div {
+    max-width: 630px;
+    text-align: center;
+    color: #071629;
+}
+
+.what_we_do .disc h1 {
+    font-size: 32px;
+    margin: 0 0 30px 0;
+}
+
+.what_we_do .disc p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.what_we_do .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 200px;
+    flex-wrap: wrap;
+}
+
+.what_we_do .row .card {
+    width: 200px;
+    text-align: center;
+    color: #071629;
+}
+
+.what_we_do .row .card span {
+    color: #ff6565;
+    font-size: 94px;
+}
+
+.what_we_do .row .card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+    .what_we_do .row {
+        margin: 0 100px;
+    }
+
+    .what_we_do .row .card {
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .what_we_do .row {
+        margin: 0 20px;
+        justify-content: center;
+    }
+}
+
+/* Our results Section */
+
+.our_results {
+    background-image: url("./images/headphones_hero_2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.our_results .disc {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.our_results .disc div {
+    max-width: 630px;
+    text-align: center;
+    color: white;
+}
+
+.our_results .disc h1 {
+    font-size: 32px;
+    margin: 0 0 30px 0;
+}
+
+.our_results .disc p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.our_results .row {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 200px;
+    flex-wrap: wrap;
+}
+
+.our_results .card {
+    position: relative;
+    width: 157.5px;
+    height: 150px;
+    background: #ff6565;
+    clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.our_results .card h2 {
+    margin: 10px 0;
+    font-size: 40px;
+}
+
+.our_results .card p {
+    font-size: 12px;
+}
+
+@media (max-width: 767px) {
+    .our_results .row {
+        margin: 0 140px;
+    }
+
+    .our_results .row .card {
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .our_results .row {
+        justify-content: center;
+    }
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: "holberton_school-icon";
+    src: url("fonts/holberton_school-icon.eot?sq4eq4");
+    src: url("fonts/holberton_school-icon.eot?sq4eq4#iefix") format("embedded-opentype"),
+        url("fonts/holberton_school-icon.ttf?sq4eq4") format("truetype"),
+        url("fonts/holberton_school-icon.woff?sq4eq4") format("woff"),
+        url("fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "holberton_school-icon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-arrow_1:before {
+    content: "\e900";
+}
+.holberton_school-icon-arrow_2:before {
+    content: "\e901";
+}
+.holberton_school-icon-arrow_3:before {
+    content: "\e902";
+}
+.holberton_school-icon-arrow_4:before {
+    content: "\e903";
+}
+.holberton_school-icon-arrow_5:before {
+    content: "\e904";
+}
+.holberton_school-icon-check:before {
+    content: "\e905";
+}
+.holberton_school-icon-ic_bag:before {
+    content: "\e906";
+}
+.holberton_school-icon-ic_cart:before {
+    content: "\e907";
+}
+.holberton_school-icon-ic_facebook:before {
+    content: "\e908";
+}
+.holberton_school-icon-ic_hearing:before {
+    content: "\e909";
+}
+.holberton_school-icon-ic_instagram:before {
+    content: "\e90a";
+}
+.holberton_school-icon-ic_laptop:before {
+    content: "\e90b";
+}
+.holberton_school-icon-ic_money:before {
+    content: "\e90c";
+}
+.holberton_school-icon-ic_music:before {
+    content: "\e90d";
+}
+.holberton_school-icon-ic_sound:before {
+    content: "\e90e";
+}
+.holberton_school-icon-ic_twitter:before {
+    content: "\e90f";
+}
+.holberton_school-icon-ic_video:before {
+    content: "\e910";
+}
+.holberton_school-icon-menu:before {
+    content: "\e911";
+}
+.holberton_school-icon-search_1:before {
+    content: "\e912";
+}
+.holberton_school-icon-search_2:before {
+    content: "\e913";
+}
+.holberton_school-icon-star:before {
+    content: "\e914";
+}
